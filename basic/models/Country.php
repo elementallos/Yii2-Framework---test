@@ -32,7 +32,7 @@ class Country extends \yii\db\ActiveRecord
             [['population'], 'integer'],
             [['code'], 'string', 'max' => 2],
             [['name'], 'string', 'max' => 52],
-            [['data'], 'string', 'max' => 32],
+            [['data'], 'string', 'max' => 32], // metti il formato giusto
             [['code'], 'unique'],
         ];
     }
