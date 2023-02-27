@@ -1,13 +1,13 @@
 <?php
 
-namespace app\Models;
+namespace app\models;
 
 use yii\base\Model;
 use yii\data\ActiveDataProvider;
-use app\Models\Country;
+use app\models\Country;
 
 /**
- * CountrySearch represents the model behind the search form of `app\Models\Country`.
+ * CountrySearch represents the model behind the search form of `app\models\Country`.
  */
 class CountrySearch extends Country
 {
@@ -17,7 +17,7 @@ class CountrySearch extends Country
     public function rules()
     {
         return [
-            [['code', 'name'], 'safe'],
+            [['code', 'name', 'data'], 'safe'],
             [['population'], 'integer'],
         ];
     }
@@ -62,7 +62,8 @@ class CountrySearch extends Country
         ]);
 
         $query->andFilterWhere(['like', 'code', $this->code])
-            ->andFilterWhere(['like', 'name', $this->name]);
+            ->andFilterWhere(['like', 'name', $this->name])
+            ->andFilterWhere(['like', 'data', $this->data]);
 
         return $dataProvider;
     }

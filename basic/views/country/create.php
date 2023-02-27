@@ -3,7 +3,7 @@
 use yii\helpers\Html;
 
 /** @var yii\web\View $this */
-/** @var app\Models\Country $model */
+/** @var app\models\Country $model */
 
 $this->title = 'Create Country';
 $this->params['breadcrumbs'][] = ['label' => 'Countries', 'url' => ['index']];

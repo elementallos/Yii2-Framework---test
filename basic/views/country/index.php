@@ -1,13 +1,13 @@
 <?php
 
-use app\Models\Country;
+use app\models\Country;
 use yii\helpers\Html;
 use yii\helpers\Url;
 use yii\grid\ActionColumn;
 use yii\grid\GridView;
 
 /** @var yii\web\View $this */
-/** @var app\Models\CountrySearch $searchModel */
+/** @var app\models\CountrySearch $searchModel */
 /** @var yii\data\ActiveDataProvider $dataProvider */
 
 $this->title = 'Countries';
@@ -32,6 +32,7 @@ $this->params['breadcrumbs'][] = $this->title;
             'code',
             'name',
             'population',
+            'data',
             [
                 'class' => ActionColumn::className(),
                 'urlCreator' => function ($action, Country $model, $key, $index, $column) {
