@@ -1,8 +1,10 @@
 <?php
 
 use yii\helpers\Html;
-use yii\widgets\ActiveForm;
-use kartik\datecontrol\DateControl;
+//use yii\widgets\ActiveForm;
+//use common\components\Modal;
+use kartik\form\ActiveForm;
+use kartik\widgets\DateTimePicker;
 
 /** @var yii\web\View $this */
 /** @var app\models\Country $model */
@@ -19,9 +21,14 @@ use kartik\datecontrol\DateControl;
 
     <?= $form->field($model, 'population')->textInput() ?>
 
-    <?= $form->field($model, 'data')->widget(DateControl::classname(), [
-        'type'=>DateControl::FORMAT_DATETIME
+    <?= $form->field($model, 'data')->widget(DateTimePicker::classname(), [
+        'options' => ['placeholder' => 'Enter event time ...'],
+        'pluginOptions' => [
+            'autoclose' => true
+        ]
     ]);?>
+
+
 
     <div class="form-group">
         <?= Html::submitButton('Save', ['class' => 'btn btn-success']) ?>
